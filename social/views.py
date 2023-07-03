@@ -64,6 +64,19 @@ class PostViewSet(viewsets.ModelViewSet):
 
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
+        # Only for documentation
+        @extend_schema(
+            parameters=[
+                OpenApiParameter(
+                    "hashtags",
+                    type=OpenApiTypes.INT,
+                    description="Filter by hashtags id (ex. ?hashtags=1)",
+                )
+            ]
+        )
+        def list(self, request, *args, **kwargs):
+            return super().list(request, *args, **kwargs)
+
 
 class ProfileViewSet(viewsets.ModelViewSet):
     queryset = Profile.objects.prefetch_related("follow")
