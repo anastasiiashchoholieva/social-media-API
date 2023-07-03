@@ -1,55 +1,48 @@
-# Social media API
+# Social Media API
 
-## Requirements:
+ ---
+ This Django REST framework-based API serves as a RESTful interface for a social media platform.
 
-### User Registration and Authentication:
+ ## How to run
 
-- Users should be able to register with their email and password to create an account.
-- Users should be able to login with their credentials and receive a token for authentication.
-- Users should be able to logout and invalidate their token.
+ ---
+ ```python
+ git clone https: https://github.com/anastasiiashchoholieva/social-media-API.git
+ cd social_media_api
+ python -m venv venv
+ source venv/bin/activate (for linux or macOS)
+ venv\Scripts\activate (for Windows)
+ pip install -r requirements.txt
+ python manage.py migrate
+ python manage.py runserver
+ ```
 
-### User Profile:
+ ## Features available
 
-- Users should be able to create and update their profile, including profile picture, bio, and other details.
-- Users should be able to retrieve their own profile and view profiles of other users.
-- Users should be able to search for users by username or other criteria.
+ ---
+ * Authentication: Implement a secure method of accessing API endpoints by utilizing JWT token-based authentication.
+ * Post management: Enable comprehensive CRUD functionality to handle posts, including their creation, retrieval, 
+ updating, deletion and media attachment. In addition, provide users the ability to filter posts based on their hashtags
+ * User management: Allow users to register, modify their profile details.
+ * API documentation: Utilize Swagger UI to automatically generate interactive API documentation, which facilitates developers in effortlessly exploring and testing the API's endpoints.
 
-### Follow/Unfollow:
+ ## API Endpoints
 
-- Users should be able to follow and unfollow other users.
-- Users should be able to view the list of users they are following and the list of users following them.
+ ---
+ The following endpoints are available:
 
-### Post Creation and Retrieval:
+ #### User Registration, Authentication and Following
+ * api/user/register: Register a new user by providing an email and password.
+ * api/user/token: Receive a token
+ * api/user/token/refresh/: Refresh token
+ * api/user/token/verify/: Verify token
+ * api/user/me/: User information
 
-- Users should be able to create new posts with text content and optional media attachments (e.g., images). (Adding images is optional task)
-- Users should be able to retrieve their own posts and posts of users they are following.
-- Users should be able to retrieve posts by hashtags or other criteria.
+ ## Documentation
 
-### Likes and Comments (Optional):
+ ---
 
-- Users should be able to like and unlike posts. Users should be able to view the list of posts they have liked. Users should be able to add comments to posts and view comments on posts.
+ * api/doc/swagger/: Documentation using Swagger
 
-### Schedule Post creation using Celery (Optional):
-
-- Add possibility to schedule Post creation (you can select the time to create the Post before creating of it).
-
-## API Permissions:
-
-- Only authenticated users should be able to perform actions such as creating posts, liking posts, and following/unfollowing users.
-- Users should only be able to update and delete their own posts and comments.
-- Users should only be able to update and delete their own profile.
-
-## API Documentation:
-
-- The API should be well-documented with clear instructions on how to use each endpoint.
-- The documentation should include sample API requests and responses for different endpoints.
-
-## Technical Requirements:
-
-- Use Django and Django REST framework to build the API.
-- Use token-based authentication for user authentication.
-- Use appropriate serializers for data validation and representation.
-- Use appropriate views and viewsets for handling CRUD operations on models.
-- Use appropriate URL routing for different API endpoints.
-- Use appropriate permissions and authentication classes to implement API permissions.
-- Follow best practices for RESTful API design and documentation.
+![social_api.png](documentation_images%2Fsocial_api.png)
+![user_api.png](documentation_images%2Fuser_api.png)
