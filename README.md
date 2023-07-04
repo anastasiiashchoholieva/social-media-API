@@ -3,19 +3,60 @@
  ---
  This Django REST framework-based API serves as a RESTful interface for a social media platform.
 
- ## How to run
+## Installation
 
  ---
- ```python
- git clone https: https://github.com/anastasiiashchoholieva/social-media-API.git
- cd social_media_api
- python -m venv venv
- source venv/bin/activate (for linux or macOS)
- venv\Scripts\activate (for Windows)
- pip install -r requirements.txt
- python manage.py migrate
- python manage.py runserver
- ```
+
+Create venv and install requirements
+```
+python -m venv venv
+venv\Scripts\activate (on Windows)
+source venv/bin/activate (on macOS)
+pip install -r requirements.txt
+```
+
+## Configuration
+
+ ---
+
+### Environment Variables
+
+This project uses environment variables for configuration. To set up the required variables, follow these steps:
+
+1. Create a new `.env` file in the root directory of the project.
+
+2. Copy the contents of the `.env_sample` file into `.env`.
+
+3. Replace the placeholder values in the `.env` file with the actual values specific to your environment.
+
+
+## Usage
+
+ ---
+
+- To apply migrations to the database use command:
+```
+python manage.py migrate
+```
+- Use the following command to load prepared data from fixture:
+```
+python manage.py loaddata social_media_data.json
+```
+- After loading data from fixture you can use following test user for login:
+
+Email: `admin@admin.com`
+Password: `1qazcde3`
+
+or create one yourself using command:
+
+```
+python manage.py createsuperuser
+```
+
+- To run server use command:
+```
+python manage.py runserver
+```
 
  ## Features available
 
