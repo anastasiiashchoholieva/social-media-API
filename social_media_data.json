@@ -1,0 +1,254 @@
+[
+  {
+    "model": "social.hashtag",
+    "pk": 1,
+    "fields": {
+      "name": "food"
+    }
+  },
+  {
+    "model": "social.hashtag",
+    "pk": 2,
+    "fields": {
+      "name": "fun"
+    }
+  },
+  {
+    "model": "social.hashtag",
+    "pk": 3,
+    "fields": {
+      "name": "travel"
+    }
+  },
+  {
+    "model": "social.hashtag",
+    "pk": 4,
+    "fields": {
+      "name": "photography"
+    }
+  },
+  {
+    "model": "social.hashtag",
+    "pk": 5,
+    "fields": {
+      "name": "nature"
+    }
+  },
+  {
+    "model": "social.profile",
+    "pk": 1,
+    "fields": {
+      "user": 1,
+      "first_name": "John",
+      "last_name": "Doe",
+      "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "email": "john@example.com",
+      "follow": [3, 4]
+    }
+  },
+  {
+    "model": "social.profile",
+    "pk": 2,
+    "fields": {
+      "user": 2,
+      "first_name": "Jane",
+      "last_name": "Smith",
+      "bio": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem.",
+      "email": "jane@example.com",
+      "follow": []
+    }
+  },
+  {
+    "model": "social.profile",
+    "pk": 3,
+    "fields": {
+      "user": 3,
+      "first_name": "Alice",
+      "last_name": "Johnson",
+      "bio": "At vero eos et accusamus et iusto odio dignissimos ducimus.",
+      "email": "alice@example.com",
+      "follow": [1]
+    }
+  },
+  {
+    "model": "social.profile",
+    "pk": 4,
+    "fields": {
+      "user": 4,
+      "first_name": "Bob",
+      "last_name": "Williams",
+      "bio": "Eaque ipsa quae ab illo inventore veritatis et quasi architecto.",
+      "email": "bob@example.com",
+      "follow": []
+    }
+  },
+  {
+    "model": "social.profile",
+    "pk": 5,
+    "fields": {
+      "user": 5,
+      "first_name": "Emily",
+      "last_name": "Davis",
+      "bio": "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut.",
+      "email": "emily@example.com",
+      "follow": []
+    }
+  },
+  {
+    "model": "user.user",
+    "pk": 1,
+    "fields": {
+      "password": "pbkdf2_sha256$320000$6uM28XWOFX6ewyloJzjqmt$L+ZhofPylneoaL2iZS4sZu4ZMUNb4oIevfAdzOMn/eE=",
+      "last_login": "2023-01-24T09:52:18.890",
+      "is_superuser": true,
+      "first_name": "",
+      "last_name": "",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2023-01-24T09:39:39.042",
+      "email": "admin@admin.com",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "user.user",
+    "pk": 2,
+    "fields": {
+      "password": "pbkdf2_sha256$320000$tn2DBjAo8FhGtvVfpB1FXf$Lu0+qoZtp4clRlxrvw+UeB3yk0A8BQY9Xxam5e0sJj8=",
+      "last_login": null,
+      "is_superuser": false,
+      "first_name": "Amy",
+      "last_name": "Johnson",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2023-06-01T09:39:39.042",
+      "email": "amy@example.com",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "user.user",
+    "pk": 3,
+    "fields": {
+      "password": "pbkdf2_sha256$320000$tn2DBjAo8FhGtvVfpB1FXf$Lu0+qoZtp4clRlxrvw+UeB3yk0A8BQY9Xxam5e0sJj8=",
+      "last_login": null,
+      "is_superuser": false,
+      "first_name": "Michael",
+      "last_name": "Brown",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2023-05-12T13:27:39.042",
+      "email": "michael@example.com",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "user.user",
+    "pk": 4,
+    "fields": {
+      "password": "pbkdf2_sha256$320000$tn2DBjAo8FhGtvVfpB1FXf$Lu0+qoZtp4clRlxrvw+UeB3yk0A8BQY9Xxam5e0sJj8=",
+      "last_login": null,
+      "is_superuser": false,
+      "first_name": "Sarah",
+      "last_name": "Wilson",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2023-04-20T17:58:39.042",
+      "email": "sarah@example.com",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "user.user",
+    "pk": 5,
+    "fields": {
+      "password": "pbkdf2_sha256$320000$9yU0PLTDKlL02PedUtk2l1$LKjj8O1xGiPGEkDpjsHk87db1iLgt8dgDqECzcsivio",
+      "last_login": null,
+      "is_superuser": false,
+      "first_name": "Paul",
+      "last_name": "Dacre",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2023-04-20T17:58:39.042",
+      "email": "paul.dacren@example.com",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "social.post",
+    "pk": 1,
+    "fields": {
+      "title": "Delicious Recipes",
+      "content": "Check out these mouth-watering recipes!",
+      "created_at": "2023-06-28T10:30:00Z",
+      "hashtags": [1, 3],
+      "user": 1,
+      "image": "uploads/posts/recipe-12345.jpg"
+    }
+  },
+  {
+    "model": "social.post",
+    "pk": 2,
+    "fields": {
+      "title": "Exploring New Places",
+      "content": "Discovering hidden gems around the world!",
+      "created_at": "2023-06-27T15:45:00Z",
+      "hashtags": [3, 4],
+      "user": 2,
+      "image": "uploads/posts/travel-56789.jpg"
+    }
+  },
+  {
+    "model": "social.post",
+    "pk": 3,
+    "fields": {
+      "title": "Capturing Moments",
+      "content": "Preserving memories through photography.",
+      "created_at": "2023-06-26T09:15:00Z",
+      "hashtags": [2, 4, 5],
+      "user": 3,
+      "image": "uploads/posts/photo-98765.jpg"
+    }
+  },
+  {
+    "model": "social.post",
+    "pk": 4,
+    "fields": {
+      "title": "Nature's Beauty",
+      "content": "Witness the wonders of nature!",
+      "created_at": "2023-06-25T17:20:00Z",
+      "hashtags": [5],
+      "user": 4,
+      "image": "uploads/posts/nature-45678.jpg"
+    }
+  },
+  {
+    "model": "social.post",
+    "pk": 3,
+    "fields": {
+      "title": "Capturing Moments",
+      "content": "Preserving memories through photography.",
+      "created_at": "2023-06-26T09:15:00Z",
+      "hashtags": [2, 4, 5],
+      "user": 3,
+      "image": "uploads/posts/photo-98765.jpg"
+    }
+  },
+  {
+    "model": "social.post",
+    "pk": 4,
+    "fields": {
+      "title": "Nature's Beauty",
+      "content": "Witness the wonders of nature!",
+      "created_at": "2023-06-25T17:20:00Z",
+      "hashtags": [5],
+      "user": 4,
+      "image": "uploads/posts/nature-45678.jpg"
+    }
+  }
+]
