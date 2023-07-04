@@ -79,7 +79,7 @@ class PostViewSet(viewsets.ModelViewSet):
 
 
 class ProfileViewSet(viewsets.ModelViewSet):
-    queryset = Profile.objects.prefetch_related("follow")
+    queryset = Profile.objects.all()
     serializer_class = ProfileSerializer
     authentication_classes = (JWTAuthentication,)
     permission_classes = (IsAuthenticatedOrReadOnly, IsAuthorOrReadOnly)
@@ -112,7 +112,6 @@ class ProfileViewSet(viewsets.ModelViewSet):
         profile.follow.add(user_to_follow)
 
         if request.user != user_to_follow:
-            profile.follow.add(user_to_follow)
             return Response(
                 "User was followed successfully.",
                 status=status.HTTP_200_OK,
@@ -138,29 +137,3 @@ class ProfileViewSet(viewsets.ModelViewSet):
             {"detail": "You have successfully unsubscribed from this profile."},
             status=status.HTTP_200_OK,
         )
-
-    @action(
-        methods=["GET"],
-        detail=True,
-        url_path="retrieve-following",
-        permission_classes=[IsAuthorOrReadOnly],
-    )
-    def get_following(self, request, pk=None):
-        """Endpoint to retrieve the list of users being followed by the profile."""
-        profile = self.get_object()
-        following = profile.follow.all()
-        serializer = ProfileSerializer(following, many=True)
-        return Response(serializer.data, status=status.HTTP_200_OK)
-
-    @action(
-        methods=["POST"],
-        detail=True,
-        url_path="retrieve-followers",
-        permission_classes=[IsAuthorOrReadOnly],
-    )
-    def get_followers(self, request, pk=None):
-        """Endpoint to retrieve the list of users following the profile."""
-        profile = self.get_object()
-        followers = profile.objects.filter(follow=pk)
-        serializer = ProfileSerializer(followers, many=True)
-        return Response(serializer.data, status=status.HTTP_200_OK)

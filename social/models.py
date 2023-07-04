@@ -24,7 +24,9 @@ class Profile(models.Model):
     bio = models.TextField(blank=True)
     email = models.EmailField(max_length=254, blank=True, null=True)
     follow = models.ManyToManyField(
-        settings.AUTH_USER_MODEL, related_name="follow", blank=True
+        settings.AUTH_USER_MODEL,
+        related_name="follow",
+        blank=True,
     )
 
     def __str__(self):

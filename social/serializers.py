@@ -38,7 +38,7 @@ class PostImageSerializer(serializers.ModelSerializer):
 
 class ProfileSerializer(serializers.ModelSerializer):
     posts = PostSerializer(many=True, read_only=True)
-    followers = serializers.PrimaryKeyRelatedField(
+    follow = serializers.PrimaryKeyRelatedField(
         many=True, queryset=Profile.objects.all()
     )
     user = serializers.StringRelatedField(many=False)
@@ -51,6 +51,6 @@ class ProfileSerializer(serializers.ModelSerializer):
             "first_name",
             "last_name",
             "bio",
-            "followers",
+            "follow",
             "posts",
         )
